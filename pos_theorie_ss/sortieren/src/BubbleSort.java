@@ -11,24 +11,33 @@ public class BubbleSort {
     }
 
     static void bubbleSort(boolean print) {
-        int n = a.length;
-        for (int i = 0; i < n; i++) {
-            boolean swapped = false;
-            for (int j = 0; j < n - i - 1; j++) {
-                if (a[j] > a[j + 1]) {
-                    swap(j, j + 1);
-                    swapped = true;
+        boolean vertauscht = true;
+        while (vertauscht) {
+            vertauscht = false;
+            for (int i = 0; i < a.length - 1; i++) {
+                if (a[i + 1] < a[i]) {
+                    swap(i, i + 1);
+                    vertauscht = true;
                 }
-            }
-            if (print) {
-                printLine();
-            }
-            if (!swapped) {
-                break;
             }
         }
     }
 
+    static void bubbleSortOptimiert(boolean print) {
+        boolean vertauscht = true;
+        int durchlauf = 1;
+        while (vertauscht) {
+            vertauscht = false;
+            for (int i = 0; i < a.length - durchlauf; i++) {
+                if (a[i + 1] < a[i]) {
+                    swap(i, i + 1);
+                    vertauscht = true;
+                }
+            }
+            durchlauf++;
+        }
+
+    }
     static void swap(int i, int j) {
         int tmp = a[i];
         a[i] = a[j];

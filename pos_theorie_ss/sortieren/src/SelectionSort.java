@@ -10,21 +10,19 @@ public class SelectionSort {
     }
 
     static void selectionSort(boolean print) {
-        int n = a.length;
-        for (int i = 0; i < n - 1; i++) {
-            int minIdx = i;
-            for (int j = i + 1; j < n; j++) {
-                if (a[j] < a[minIdx]) {
-                    minIdx = j;
+        for (int i=0; i<a.length-1; i++) { // O(n)
+            int jMin = i;
+            for (int j=i+1; j<a.length; j++) { // O(n)
+                if (a[j] < a[jMin]) {
+                    jMin = j;
                 }
             }
-            if (minIdx != i) {
-                if (print) {
-                    printLine(i, minIdx);
-                }
-                swap(i, minIdx);
+            swap(i, jMin);
+            if (print) {
+                printLine(i, jMin);
             }
         }
+
     }
 
     static void swap(int i, int j) {

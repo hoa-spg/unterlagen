@@ -110,9 +110,9 @@ public class QuickSort {
             } else if (idx == pivotPos && pivotFinallyPlaced) {
                 line.append(center("[" + val + "]", 6));
             } else if (swappedLeft != null && idx == swappedLeft) {
-                line.append(center("l*" + val, 6));
+                line.append(center("i*" + val, 6));
             } else if (swappedRight != null && idx == swappedRight) {
-                line.append(center("r*" + val, 6));
+                line.append(center("j*" + val, 6));
             } else {
                 line.append(center(String.valueOf(val), 6));
             }

@@ -10,20 +10,25 @@ public class InsertionSort {
     }
 
     static void insertionSort(boolean print) {
-        int n = a.length;
-        for (int i = 1; i < n; i++) {
-            int key = a[i];
-            int j = i - 1;
-
-            while (j >= 0 && a[j] > key) {
-                a[j + 1] = a[j];
-                j -= 1;
+        for (int i=1; i<a.length; i++) {
+            int j = i;
+            for (j=i; j>0; j--) {
+                if (a[j] < a[j-1]) {
+                    swap(j, j-1);
+                } else {
+                    break;
+                }
             }
-            a[j + 1] = key;
             if (print) {
                 printLine(j + 1, i);
             }
         }
+    }
+
+    static void swap(int i, int j) {
+        int tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
     }
 
     static void printLine(int insertedIndex, int originalIndex) {

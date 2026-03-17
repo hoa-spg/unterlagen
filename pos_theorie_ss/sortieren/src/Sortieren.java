@@ -6,7 +6,7 @@ public class Sortieren {
 
     public static void bubbleSortOptimiert(int[] a) {
         BubbleSort.setArray(a);
-        BubbleSort.bubbleSort(false);
+        BubbleSort.bubbleSortOptimiert(false);
     }
 
     public static void insertionSort(int[] a) {
