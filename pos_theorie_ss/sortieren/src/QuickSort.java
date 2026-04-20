@@ -1,6 +1,7 @@
 public class QuickSort {
 
-    static int[] a = {37, 12, 45, 2, 18, 25, 7, 30, 50, 1, 19, 5};
+//    static int[] a = {37, 12, 45, 2, 18, 25, 7, 30, 50, 1, 19, 5};
+static int[] a = {41, 39, 99, 5, 16, 25, 77, 4, 11, 18, 0, 55};
 
     static void setArray(int[] arr) {
         a = arr;
